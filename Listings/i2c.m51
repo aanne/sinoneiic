@@ -1,0 +1,273 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/28/2019  18:44:29  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\main.obj TO .\Objects\i2c PRINT (.\Listings\i2c.m51) RAMSIZE (
+>> 256) CODE (0X100)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\main.obj (MAIN)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\i2c (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0018H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?MAIN
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0038H                  *** GAP ***
+            CODE    003BH     0003H     ABSOLUTE     
+                    003EH     00C2H                  *** GAP ***
+            CODE    0100H     008CH     UNIT         ?C_C51STARTUP
+            CODE    018CH     002EH     UNIT         ?PR?SYSINIT?MAIN
+            CODE    01BAH     0010H     UNIT         ?PR?TWI_INIT?MAIN
+            CODE    01CAH     000FH     UNIT         ?PR?TWI_INT?MAIN
+            CODE    01D9H     0008H     UNIT         ?PR?MAIN?MAIN
+            CODE    01E1H     0004H     UNIT         ?PR?BEEP?MAIN
+            CODE    01E5H     0004H     UNIT         ?PR?BEEPSTOP?MAIN
+            CODE    01E9H     0004H     UNIT         ?PR?LED1_ON?MAIN
+            CODE    01EDH     0004H     UNIT         ?PR?LED1_OFF?MAIN
+            CODE    01F1H     0004H     UNIT         ?PR?LED2_ON?MAIN
+            CODE    01F5H     0004H     UNIT         ?PR?LED2_OFF?MAIN
+            CODE    01F9H     0004H     UNIT         ?PR?LED3_ON?MAIN
+            CODE    01FDH     0004H     UNIT         ?PR?LED3_OFF?MAIN
+            CODE    0201H     0003H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\i2c (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/28/2019  18:44:29  PAGE 2
+
+
+
+?PR?MAIN?MAIN
+  +--> ?PR?SYSINIT?MAIN
+  +--> ?PR?TWI_INIT?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\i2c (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0100H         SEGMENT       ?C_C51STARTUP
+  I:0021H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0103H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0100H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0100H         LINE#         133
+  C:0102H         LINE#         134
+  C:0103H         LINE#         135
+  C:0104H         LINE#         136
+  C:0106H         LINE#         185
+  C:0109H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:009FH         PUBLIC        SSDAT
+  D:0090H         PUBLIC        P1
+  C:01CAH         PUBLIC        TWI_Int
+  D:00A0H         PUBLIC        P2
+  C:01E9H         PUBLIC        LED1_ON
+  D:008FH         PUBLIC        OTCON
+  D:00D8H         PUBLIC        P5
+  C:01F1H         PUBLIC        LED2_ON
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/28/2019  18:44:29  PAGE 3
+
+
+  B:00A8H.7       PUBLIC        EA
+  C:01F9H         PUBLIC        LED3_ON
+  D:00A8H         PUBLIC        IE
+  D:00EFH         PUBLIC        OPERCON
+  D:009BH         PUBLIC        P0PH
+  D:00B8H         PUBLIC        IP
+  D:0092H         PUBLIC        P1PH
+  D:00A2H         PUBLIC        P2PH
+  C:01E1H         PUBLIC        beep
+  D:00DAH         PUBLIC        P5PH
+  C:01D9H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:009DH         PUBLIC        SSCON0
+  D:009EH         PUBLIC        SSCON1
+  D:00A9H         PUBLIC        IE1
+  C:01EDH         PUBLIC        LED1_OFF
+  C:01F5H         PUBLIC        LED2_OFF
+  C:01FDH         PUBLIC        LED3_OFF
+  C:01E5H         PUBLIC        beepStop
+  D:00CFH         PUBLIC        WDTCON
+  D:009AH         PUBLIC        P0CON
+  D:0091H         PUBLIC        P1CON
+  D:00A1H         PUBLIC        P2CON
+  D:00D9H         PUBLIC        P5CON
+  D:00C8H         PUBLIC        T2CON
+  C:01BAH         PUBLIC        TWI_Init
+  B:0020H.0       PUBLIC        TWIFlag
+  C:018CH         PUBLIC        sysInit
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          BEEP
+  C:01E1H         LINE#         5
+  C:01E1H         LINE#         6
+  C:01E4H         LINE#         7
+  -------         ENDPROC       BEEP
+  -------         PROC          BEEPSTOP
+  C:01E5H         LINE#         9
+  C:01E5H         LINE#         10
+  C:01E8H         LINE#         11
+  -------         ENDPROC       BEEPSTOP
+  -------         PROC          LED1_ON
+  C:01E9H         LINE#         13
+  C:01E9H         LINE#         14
+  C:01ECH         LINE#         15
+  -------         ENDPROC       LED1_ON
+  -------         PROC          LED1_OFF
+  C:01EDH         LINE#         17
+  C:01EDH         LINE#         18
+  C:01F0H         LINE#         19
+  -------         ENDPROC       LED1_OFF
+  -------         PROC          LED2_ON
+  C:01F1H         LINE#         21
+  C:01F1H         LINE#         22
+  C:01F4H         LINE#         23
+  -------         ENDPROC       LED2_ON
+  -------         PROC          LED2_OFF
+  C:01F5H         LINE#         25
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/28/2019  18:44:29  PAGE 4
+
+
+  C:01F5H         LINE#         26
+  C:01F8H         LINE#         27
+  -------         ENDPROC       LED2_OFF
+  -------         PROC          LED3_ON
+  C:01F9H         LINE#         29
+  C:01F9H         LINE#         30
+  C:01FCH         LINE#         31
+  -------         ENDPROC       LED3_ON
+  -------         PROC          LED3_OFF
+  C:01FDH         LINE#         33
+  C:01FDH         LINE#         34
+  C:0200H         LINE#         35
+  -------         ENDPROC       LED3_OFF
+  -------         PROC          SYSINIT
+  C:018CH         LINE#         37
+  C:018CH         LINE#         38
+  C:018FH         LINE#         39
+  C:0192H         LINE#         40
+  C:0195H         LINE#         41
+  C:0198H         LINE#         42
+  C:019BH         LINE#         43
+  C:019EH         LINE#         44
+  C:01A1H         LINE#         45
+  C:01A4H         LINE#         47
+  C:01A7H         LINE#         48
+  C:01AAH         LINE#         49
+  C:01ADH         LINE#         50
+  C:01B0H         LINE#         51
+  C:01B2H         LINE#         52
+  C:01B5H         LINE#         53
+  C:01B8H         LINE#         54
+  C:01B9H         LINE#         55
+  -------         ENDPROC       SYSINIT
+  -------         PROC          TWI_INIT
+  C:01BAH         LINE#         63
+  C:01BAH         LINE#         64
+  C:01BAH         LINE#         65
+  C:01BDH         LINE#         66
+  C:01C0H         LINE#         67
+  C:01C3H         LINE#         68
+  C:01C6H         LINE#         69
+  C:01C9H         LINE#         70
+  -------         ENDPROC       TWI_INIT
+  -------         PROC          TWI_INT
+  C:01CAH         LINE#         72
+  C:01CCH         LINE#         73
+  C:01D1H         LINE#         74
+  C:01D4H         LINE#         77
+  C:01D6H         LINE#         78
+  C:01D6H         LINE#         79
+  -------         ENDPROC       TWI_INT
+  -------         PROC          MAIN
+  C:01D9H         LINE#         81
+  C:01D9H         LINE#         82
+  C:01DCH         LINE#         83
+  C:01DFH         LINE#         84
+  C:01DFH         LINE#         86
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/28/2019  18:44:29  PAGE 5
+
+
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?BEEP?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?BEEPSTOP?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LED1_ON?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LED1_OFF?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LED2_ON?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LED2_OFF?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LED3_ON?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LED3_OFF?MAIN
+
+Program Size: data=9.1 xdata=0 code=266
+LINK/LOCATE RUN COMPLETE.  8 WARNING(S),  0 ERROR(S)
